@@ -1,0 +1,47 @@
+{
+    "port": 8001,
+
+    "dbConfig": {
+        "host": "192.168.77.89",
+        "port": 3306,
+        "user": "orderAdmin",
+        "password": "sM2Wp+uGreh+8Kdyw22IVQ==",
+        "database": "orderDB"
+    },
+    "loggerConfig": {
+        "appenders": {
+            "console": { "type": "console" },
+            "dateFile": {
+                "type": "dateFile",
+                "filename": "logs/order_api_common.log",
+                "pattern": "-yyyy-MM-dd",
+                "alwaysIncludePattern": false
+            }
+        },
+        "categories": {
+            "VAULT_API": { "appenders": ["dateFile"], "level": "ALL" },
+            "default": { "appenders": ["console"], "level": "ALL" }
+        },
+        "printLineNumber": true
+    },
+    "middleware": {
+        "appsec": {
+            "module": {
+                "arguments": [
+                    {
+                        "csrf": false
+                    }
+                ]
+            }
+        },
+        "router": {
+            "module": {
+                "arguments": [
+                    {
+                        "directory": "path:./controllers"
+                    }
+                ]
+            }
+        }
+    }
+}

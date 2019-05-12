@@ -1,0 +1,16 @@
+{
+    "keys": [
+        {
+            "key": {
+                "value": "Basic T0NUZXN0aW5nOlByb3RlY3QkMQ==",
+                "tenantCode": "slatStudioTenant1"
+            }
+        },
+        {
+            "key": {
+                "value": "Basic T0NSZWRlbXB0aW9uOlByb3RlY3QkMQ==",
+                "tenantCode": "slatStudioTenant2"
+            }
+        } 
+    ]
+}
