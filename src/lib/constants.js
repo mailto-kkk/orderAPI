@@ -9,5 +9,6 @@ module.exports = {
     'CREATED': 'CREATED',
     'CANCELLED': 'CANCELLED',
     'CONFIRMED': 'CONFIRMED',
+    'DELIVERED': 'DELIVERED',
     'AUTHORIZATION': 'Basic V1JUVXNlckF1dGhBbHBoYUJhbms6cGFzc3dvcmQxMjMk',
 };

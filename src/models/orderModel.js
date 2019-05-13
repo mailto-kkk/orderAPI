@@ -187,3 +187,16 @@ function cancelPayment(postingID,cancelReason,callback) {
         callback(false);
     });
 };
+
+function updateOrderState(){
+    var d              = Q.defer();
+    var postingID;
+    var sqlData        = [constants.DELIVERED,constants.CONFIRMED];
+    var tableMainQuery   = "UPDATE ORDER SET STATE = ? WHERE STATE = ? ";
+    DBUtil.getConnection(function (err, dbConn) {
+            dbConn.query(tableMainQuery, sqlData, function (err, results) {
+                DBUtil.releaseConnection(dbConn);
+                 return true;
+            });
+    });
+}

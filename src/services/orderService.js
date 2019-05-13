@@ -71,3 +71,7 @@ orderService.cancelOrder = function(request,response) {
             return commonUtil.sendResponseWoBody(response, httpStatus.INTERNAL_SERVER_ERROR);
         });
 };
+
+orderService.updateOrderState = function() {
+    orderModel.updateOrderState();
+};

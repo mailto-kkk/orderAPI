@@ -3,6 +3,7 @@ var logger = require('../lib/logUtil');
 var commonUtil = require('../lib/commonUtil');
 var httpStatus = require('http-status');
 var orderService= require('../services/orderService');
+var schedule = require('node-schedule');
 
 module.exports = function (router) {
 
@@ -42,5 +43,10 @@ module.exports = function (router) {
         var  orderID= req.params.orderID;
         orderService.cancelOrder(req, res);
 
+    });
+
+    var j = schedule.scheduleJob('*/1 * * * *', function(){
+        console.log('Running for every minute');
+        orderService.updateOrderState();
     });
 };
